@@ -93,7 +93,7 @@
     
     
     /*
-     4.filter--筛选
+     5.filter--筛选
      filter会返回一个新的RACSignal信号对象，只有当filert返回yes时，才会发送信号进入subscribeNext
      */
 //    [[RACObserve(self , name) filter:^(NSString *newName) {
@@ -106,7 +106,7 @@
     
     
     /*
-     3.RAC--将一个信号绑定到一个属性上
+     6.RAC--将一个信号绑定到一个属性上
      +combineLatest:reduce:--第一个参数是一个数组，里面存放信号，当至少一个信号的触发时，会调用reduce的方法并返回一个新的信号对象并返回每个信号的值
      combineLatest--将多个信号量进行合并，当其中一个信号量发出Value事件时，如果另一个信号量之前也发送过Value事件，那么就取出最后一个事件的Value值与当前发送的事件值进行合并，然后将合并后的值发送给新的信号量的观察者。如果其中一个未发送过任何Value，那么将不会向合并后的信号量的观察者发送事件。
      */
@@ -123,7 +123,7 @@
     
     
     /*
-     5.merge--合并多个信号，当他们都执行完之后，再继续subscribeCompleted，可用于多个异步请求
+     7.merge--合并多个信号，当他们都执行完之后，再继续subscribeCompleted，可用于多个异步请求
      */
 //    [[RACSignal merge:@[] ] subscribeCompleted:^{
 //        NSLog(@"都执行完之后执行");
@@ -131,7 +131,7 @@
     
     
     /*
-     6.map--映射,将原来信号的返回值，进行转换后返回一个新的信号和新的返回值
+     8.map--映射,将原来信号的返回值，进行转换后返回一个新的信号和新的返回值
      */
 //    RACSignal *signalA = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
 //        [subscriber sendNext:@"唱歌"];
@@ -146,7 +146,7 @@
 
     
     /*
-     7.RACChannelTerminal--信号双向绑定，当A信号触发时，相应改变B信号的值，反之也成立
+     9.RACChannelTerminal--信号双向绑定，当A信号触发时，相应改变B信号的值，反之也成立
      */
 //    RACChannelTerminal *channelA = RACChannelTo(self, valueA);
 //    RACChannelTerminal *channelB = RACChannelTo(self, valueB);
